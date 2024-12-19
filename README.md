@@ -15,19 +15,14 @@ writing results to `counts/total_counts.json`
 * Build the mapping container with `./build_mapper.sh`
 * Run word counter with `./count_words.sh`
 
-# MapReduce History
+## MapReduce History
 Google developed MapReduce to efficiently crawl, categorize, and index the internet, for use as inputs into the PageRank algorithm. PageRank evaluates the importance of web pages based off of the quality and quantity of inbound links.  AFter scraping raw HTML data with web crawlers, Google used the Map Phase to parse HTML files into key-value pairs. The Reduce Phase sums up contributions for a given URL to determine its rank
 
-# Shortcomings of Naive approach
-### I/O Overhead
-* Reading entire files into memory in Docker containers creates I/O overhead, particularly for large files
-### Dictionary Overhead
-* Using a single dictionary (+=) to accumulate word counts requires loading all intermediate data into memory at once
-* Python’s dictionary implementation is not optimized for large-scale parallel reductions. Handling collisions and resizing adds overhead compared to specialized data structures
-### Data Shuffling and Sorting
-### Containerization Overhead
-* Docker container startup times add latency for each file
-* Container orchestration tools (e.g., Docker Swarm or Kubernetes) are not inherently optimized for fine-grained MapReduce-style workloads
+## Shortcomings of Naive approach
+- **I/O Overhead**: Reading entire files into memory in Docker containers creates I/O overhead, particularly for large files
+- **Dictionary Overhead**: Using a single dictionary (+=) to accumulate word counts requires loading all intermediate data into memory at once. Python’s dictionary implementation is not optimized for large-scale parallel reductions. Handling collisions and resizing adds overhead compared to specialized data structures
+- **Data Shuffling and Sorting**: TODO: writeup
+- **Containerization Overhead**: Docker container startup times add latency for each file. Container orchestration tools (e.g., Docker Swarm or Kubernetes) are not inherently optimized for fine-grained MapReduce-style workloads
 
 <details>
 <summary>Click to expand references</summary>
