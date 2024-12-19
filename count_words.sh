@@ -17,7 +17,7 @@ done
 
 # wait for each container to finish
 wait
-echo "All 9 containers finished computation" 
+echo "All 9 containers finished mapping tasks." 
 
 # Run reducer by overiding the mapping container entrypoint, instead running reduce.py
 docker run -v "$(pwd)/counts:/app/counts" --entrypoint python word_count_mapper reduce.py
