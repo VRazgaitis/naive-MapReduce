@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t p2_vrazgaitis .
+docker build -t word_count_mapper .
