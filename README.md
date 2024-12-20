@@ -26,7 +26,7 @@ Google developed MapReduce to efficiently crawl, categorize, and index the inter
 - **Local compute**: Containers run in parallel using the `&` opperator, but MapReduce is meant to run on a distributed network of commoditized hardware with fault tolerance, rather than on a local machine  
 - **I/O Overhead**: Reading entire files into memory in Docker containers creates I/O overhead, particularly for large files
 - **Dictionary Overhead**: Using a single dictionary (+=) to accumulate word counts requires loading all intermediate data into memory at once. Python’s dictionary implementation is not optimized for large-scale parallel reductions. Handling collisions and resizing adds overhead compared to specialized data structures
-- **Data Shuffling and Sorting**: TODO: writeup
+- **Data Shuffling and Sorting**: Python built-in sorting functions are used, which may not be as efficient as Unix pipelines when processing datasets larger than available memory
 - **Containerization Overhead**: Docker container startup times add latency for each file. Container orchestration tools (e.g., Docker Swarm or Kubernetes) are not inherently optimized for fine-grained MapReduce-style workloads
 
 <details>
