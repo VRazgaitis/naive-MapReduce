@@ -35,4 +35,5 @@ Google developed MapReduce to efficiently crawl, categorize, and index the inter
 # References
 * Docker Volume mounting - https://docs.docker.com/engine/storage/#volume-mounts
 * Google MapReduce paper - https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf
+* Designing Data-Intensive Applications p.391 - https://github.com/samayun/devbooks/blob/master/Designing%20Data-Intensive%20Applications%20The%20Big%20Ideas%20Behind%20Reliable%2C%20Scalable%2C%20and%20Maintainable%20Systems%20(%20PDFDrive%20).pdf
 </details>
