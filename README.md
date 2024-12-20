@@ -7,7 +7,7 @@ The dataset for this project consists of webscraped text data of Stack Overflow 
 
 The host machine launches Docker containers to tally wordcounts in each text file (_Mapping task_), writing results as JSON files in a filesystem shared with the host machine.
 
-After all word count tasks have finished, the host combines and orders wordcount results results (_Reducing task_),
+After all word count tasks have finished, the host launches a final container to combine and order intermediate wordcount results (_Reducing task_),
 writing the sorted, merged wordcount key/value pairs result to `counts/total_counts.json`
 
 <div align="center">
